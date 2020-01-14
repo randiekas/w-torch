@@ -7,12 +7,7 @@ import (
 
 	"github.com/gin-gonic/gin"
 	_ "github.com/heroku/x/hmetrics/onload"
-	"github.com/randiekas/go-whatsapp"
 )
-
-type waHandler struct {
-	c *whatsapp.Conn
-}
 
 func main() {
 	// setting port dan lain lain
@@ -33,6 +28,7 @@ func main() {
 	router.GET("/", func(c *gin.Context) {
 		c.HTML(http.StatusOK, "index.tmpl.html", nil)
 	})
+
 	router.POST("/", func(c *gin.Context) {
 		c.HTML(http.StatusOK, "post.tmpl.html", nil)
 	})
